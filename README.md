@@ -10,7 +10,7 @@ Stellar Drift is a game that will test your focus, reaction times, and ability t
 
 As your score increases, so will your speed! Watch for the colours changing to indicate your progression! To control the ship, use the left and right arrow keys, or for mobile and tablet users, touch anywhere on the the left and right sides of the screen. When you're ready, hit the Enter key or press the Start Game button to begin... Good luck!
 
-[**Click here to play the game**](https://samlaubscher.github.io/Stellar-Drift-Game-M2/)
+[**Click here to play the game**](https://github.com/fullstack0330/Stellar-Game-Canvas/)
 
 ##### This project was developed for my Interactive Frontend Development module on my Full Stack Software Development course.
 
@@ -224,11 +224,11 @@ To ensure the development of my project was maintainable and manageable, I creat
 
 ### 2.1 Existing Features
 
-### [**Canvas API Graphics Animation**](https://github.com/samlaubscher/Stellar-Drift-Game-M2/blob/master/assets/js/script.js#L21)
+### [**Canvas API Graphics Animation**](https://github.com/fullstack0330/Stellar-Game-Canvas/blob/master/assets/js/script.js#L21)
 
 The Canvas API covers the entire screen and 2D graphic shapes and text are rendered onto it using JavaScript. These are then animated in a main loop by calling a specific update callback function to run every frame (roughly 60 times per second) using the browser redraw schedule with `window.requestAnimationFrame(update)`. This update function calls other specific functions containing algorithms to change certain parameters of the program then render the new content to the canvas each frame.
 
-### [**Animated Star Background**](https://github.com/samlaubscher/Stellar-Drift-Game-M2/blob/master/assets/js/script.js#L73)
+### [**Animated Star Background**](https://github.com/fullstack0330/Stellar-Game-Canvas/blob/master/assets/js/script.js#L73)
 
 Stars are generated using an algorithm that allows them to move outwards from the centre of the screen at an increasing speed whilst also growing in size. This creates an animated starfield background used behind the asteroids and player ship.
 
@@ -320,7 +320,7 @@ My original discovery of this algorithm comes from a youtube tutorial by Sharad 
 
 </details>
 
-### [**Animated Asteroid Sprites**](https://github.com/samlaubscher/Stellar-Drift-Game-M2/blob/master/assets/js/script.js#L140)
+### [**Animated Asteroid Sprites**](https://github.com/fullstack0330/Stellar-Game-Canvas/blob/master/assets/js/script.js#L140)
 
 Asteroid sprites generate around the centre of the screen and travel outwards towards the path of the player ship in a tunnel type style. They grow larger the closer to the edge of the screen they travel, much like the stars but often bigger.
 
@@ -410,7 +410,7 @@ At the bottom of the `showSprite()` method sits the invocation of the `collision
 <img src="readme images\Sprites.gif" alt="Sprites">
 </div>
 
-### [**Player Ship Movement**](https://github.com/samlaubscher/Stellar-Drift-Game-M2/blob/master/assets/js/script.js#L281)
+### [**Player Ship Movement**](https://github.com/fullstack0330/Stellar-Game-Canvas/blob/master/assets/js/script.js#L281)
 
 The player rotates around the centre of the screen in a 360 circle, avoiding the asteroids that are constantly travelling towards different parts of this path.
 
@@ -466,7 +466,7 @@ function playerShip() {
 <img src="readme images\Player control.gif" alt="Player rotation control">
 </div>
 
-### [**Player Ship Controls**](https://github.com/samlaubscher/Stellar-Drift-Game-M2/blob/master/assets/js/script.js#L347)
+### [**Player Ship Controls**](https://github.com/fullstack0330/Stellar-Game-Canvas/blob/master/assets/js/script.js#L347)
 
 The player ship can be rotated around the screen using left and right arrow buttons or by touching the left and right halves of the screen on mobile and tablet devices. This rotates the player at a consistent speed for as long as the key or button is pressed
 
@@ -490,7 +490,7 @@ function moveLeft() {
 
 </details>
 
-### [**Collision Detection**](https://github.com/samlaubscher/Stellar-Drift-Game-M2/blob/master/assets/js/script.js#L433)
+### [**Collision Detection**](https://github.com/fullstack0330/Stellar-Game-Canvas/blob/master/assets/js/script.js#L433)
 
 When the player ship collides with an asteroid, it results in a crash event and the crash screen shows, ending the game. There was a lot of work that went in to the code to create this feature. Please read the detailed breakdown below.
 
@@ -633,7 +633,7 @@ function collisionDetection(x, y) {
 
 </details>
 
-### [**Start Screen**](https://github.com/samlaubscher/Stellar-Drift-Game-M2/blob/master/index.html#L65)
+### [**Start Screen**](https://github.com/fullstack0330/Stellar-Game-Canvas/blob/master/index.html#L65)
 
 When the page first loads, users are presented with the start screen. The background stars are frozen, and the centre panel displays instructions for how to play the game as well as controls for both mobile and desktop browsers. There is a title saying _STELLAR DRIFT_, created using multiple h2 layers independently positioned.
 
@@ -645,7 +645,7 @@ When the page first loads, users are presented with the start screen. The backgr
 <img src="readme images\Start screen - iPhone rotated.JPG" alt="Start Screen iphone rotated"width="300">
 </div>
 
-### [**Start Game Button**](https://github.com/samlaubscher/Stellar-Drift-Game-M2/blob/master/index.html#L73)
+### [**Start Game Button**](https://github.com/fullstack0330/Stellar-Game-Canvas/blob/master/index.html#L73)
 
 The game is started by clicking or touching the Start Game button on the start screen panel. The Enter key can also be pressed, allowing users to keep their hands on the keyboard when restarting.
 
@@ -675,7 +675,7 @@ function initialiseGame() {
 
 </details>
 
-### [**Mute Audio Button**](https://github.com/samlaubscher/Stellar-Drift-Game-M2/blob/master/index.html#L49)
+### [**Mute Audio Button**](https://github.com/fullstack0330/Stellar-Game-Canvas/blob/master/index.html#L49)
 
 I created background music and sound effects for the game to add to the user experience. The mute button gives users the option to mute this audio if they choose.
 
@@ -684,15 +684,15 @@ I created background music and sound effects for the game to add to the user exp
 <img src="readme images\Mute button.gif" alt="Completed screen">
 </div>
 
-### [**Reset Button**](https://github.com/samlaubscher/Stellar-Drift-Game-M2/blob/master/index.html#L58)
+### [**Reset Button**](https://github.com/fullstack0330/Stellar-Game-Canvas/blob/master/index.html#L58)
 
 The reset button allows the user to restart the game, reloading the page back to the start panel. In the future I would like to change this into a pause button with the option to then reset, but currently this button is just linked to an event listener that calls the `reload()` function.
 
-### [**Github Social Icon**](https://github.com/samlaubscher/Stellar-Drift-Game-M2/blob/master/index.html#L112)
+### [**Github Social Icon**](https://github.com/fullstack0330/Stellar-Game-Canvas/blob/master/index.html#L112)
 
 I wanted to display a link so users can discover the repository page. This allows people to see how the game was built, who it was built by, and even make contact for comments or potential future collaboration. I knew that the Github icon would work well located on the start screen, and once again Font Awesome provided this for me.
 
-### [**Crash Screen**](https://github.com/samlaubscher/Stellar-Drift-Game-M2/blob/master/index.html#L78)
+### [**Crash Screen**](https://github.com/fullstack0330/Stellar-Game-Canvas/blob/master/index.html#L78)
 
 When a successful collision is detected, the crash screen is displayed letting users know they have crashed, displaying their final score.
 
@@ -721,7 +721,7 @@ At the bottom, the `endGame` variable which is normally `false` is set to `true`
 <img src="readme images\Crash screen.gif" alt="Crash Screen">
 </div>
 
-### [**Completed Screen**](https://github.com/samlaubscher/Stellar-Drift-Game-M2/blob/master/index.html#L92)
+### [**Completed Screen**](https://github.com/fullstack0330/Stellar-Game-Canvas/blob/master/index.html#L92)
 
 The completed screen is displayed when the user reaches the score of 10,000! Everything else remains the same as the crash screen, the only difference is the text displayed inside the panel.
 
@@ -730,7 +730,7 @@ The completed screen is displayed when the user reaches the score of 10,000! Eve
 <img src="readme images\Completed screen.gif" alt="Completed screen">
 </div>
 
-### [**Score Counter**](https://github.com/samlaubscher/Stellar-Drift-Game-M2/blob/master/assets/js/script.js#L531)
+### [**Score Counter**](https://github.com/fullstack0330/Stellar-Game-Canvas/blob/master/assets/js/script.js#L531)
 
 The score is used in more than one way across the application. It controls the speed, colour scheme, countdown timer, sprite rendering, and triggering the completed screen. Each frame increases the score by 1, until it reaches the winning score of 10,000.
 
@@ -739,7 +739,7 @@ The score is used in more than one way across the application. It controls the s
 <img src="readme images\Score counter.gif" alt="Completed screen">
 </div>
 
-### [**Countdown Timer**](https://github.com/samlaubscher/Stellar-Drift-Game-M2/blob/master/assets/js/script.js#L551)
+### [**Countdown Timer**](https://github.com/fullstack0330/Stellar-Game-Canvas/blob/master/assets/js/script.js#L551)
 
 When the Start Game button is pressed, the score starts on -100. A visual countdown timer is then used to count back from 3 every 33 points. When the score passes 0, the countdown timer disappears and the sprites are rendered. This gives users a brief but important moment to prepare themselves, increasing the overall user experience.
 
@@ -748,7 +748,7 @@ When the Start Game button is pressed, the score starts on -100. A visual countd
 <img src="readme images\Countdown timer.gif" alt="Countdown Timer">
 </div>
 
-### [**Speed Increase**](https://github.com/samlaubscher/Stellar-Drift-Game-M2/blob/master/assets/js/script.js#L564)
+### [**Speed Increase**](https://github.com/fullstack0330/Stellar-Game-Canvas/blob/master/assets/js/script.js#L564)
 
 As the score increases, so does the speed of movement of the `Star` and `Sprite` objects. Each frame the speed increments by a specific amount based on the score.
 
@@ -774,7 +774,7 @@ function speedIncrease() {
 
 </details>
 
-### [**Colour Changing**](https://github.com/samlaubscher/Stellar-Drift-Game-M2/blob/master/assets/js/script.js#L105)
+### [**Colour Changing**](https://github.com/fullstack0330/Stellar-Game-Canvas/blob/master/assets/js/script.js#L105)
 
 As the score increases, the colour scheme also changes for both the `Star` and `Sprite` objects. This not only looks nice and adds to the user experience, but it helps demonstrate the players progression in the game, adding stimulus to prevent it from seeming too repetitive.
 
@@ -800,7 +800,7 @@ ctx.fill();
 
 </details>
 
-### [**Music & Audio**](https://github.com/samlaubscher/Stellar-Drift-Game-M2/blob/master/index.html#L40)
+### [**Music & Audio**](https://github.com/fullstack0330/Stellar-Game-Canvas/blob/master/index.html#L40)
 
 I am a big fan of the retro synthwave sound which formed part of the inspiration for the theme of this game - so I wanted to make my own track as backing music. I also wanted to make the game more immersive by timing the colour changes with that music, as well as creating sounds for when the game starts, the player crashes, and when they win. I used Ableton Live 10, below are some screenshots of the projects and the sound effects used.
 
@@ -974,7 +974,7 @@ Abletone Live 10 is a Digital Audio Workspace (DAW) which is aimed predominantly
 <img src="readme images\Metrics.JPG" alt="Metrics" width="300">
 </div>
 
-- I utilised the Jasmine framework to perform unit testing on parts of the program. The functions tested all perform operations using `angle` as an argument, returning a consistent value or array that I was able to successfully test against using different inputs of `angle`. To view and run these tests, just run the [test.html](https://github.com/samlaubscher/Stellar-Drift-Game-M2/blob/master/testing/test.html) file.
+- I utilised the Jasmine framework to perform unit testing on parts of the program. The functions tested all perform operations using `angle` as an argument, returning a consistent value or array that I was able to successfully test against using different inputs of `angle`. To view and run these tests, just run the [test.html](https://github.com/fullstack0330/Stellar-Game-Canvas/blob/master/testing/test.html) file.
 
 <div align="center">
 
@@ -1063,24 +1063,24 @@ if (this.z <= 0) {
 To deploy this project online for user testing, peer review and milestone submission, I utilised the GitHub Pages feature. The steps I took to achieve this are as follows.
 
 - I logged into **GitHub**.
-- I clicked on repositories and selected **samlaubscher/Stellar-Drift-Game-M2**.
+- I clicked on repositories and selected **fullstack0330/Stellar-Game-Canvas**.
 - I clicked on **Settings** in the top right hand corner.
 - I scrolled down to the **GitHub Pages** section.
 - The top part named **Source** contains a dropdown box, I clicked that and selected **Master Branch** from the menu.
 - Upon clicking the **Master Branch**, the page automatically refreshed and a ribbon appeared stating this below message detailing the successful deployment of the page.
-  > Your site is published at https://samlaubscher.github.io/Stellar-Drift-Game-M2/
+  > Your site is published at https://github.com/fullstack0330/Stellar-Game-Canvas/
 
 ### 5.2 Locally
 
 To run this project locally, please follow these instructions:
 
-- Follow this link to the [**Stellar Drift GitHub repository**](https://github.com/samlaubscher/Stellar-Drift-Game-M2).
+- Follow this link to the [**Stellar Drift GitHub repository**](https://github.com/fullstack0330/Stellar-Game-Canvas).
 - Under the repository name, click **Clone or download**.
 - In the Clone with HTTPs section, **copy the clone URL** for the repository.
 - **Open Git Bash** in your local IDE
 - **Change the current working directory** to the location where you want the cloned directory to be made.
 - Type **git clone**, and then paste the **URL** - it should look like this
-  > https://github.com/samlaubscher/Stellar-Drift-Game-M2.git
+  > https://github.com/fullstack0330/Stellar-Game-Canvas.git
 - Press **Enter** and your clone will be created.
 - To remove the origin link of this repository from your IDE type `git remote rm origin`.
 - Alternatively - you can download a ZIP folder of the project directly from the GitHub repository page and unpack into the desired location.
