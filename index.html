@@ -15,6 +15,7 @@
         type="text/css" />
     <!-- Stylesheet Link -->
     <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
+    
     <title>Stellar Drift Game</title>
 </head>
 
@@ -37,8 +38,15 @@
                 <h2 class="text-layer-1">STELLAR DRIFT</h2>
             </div>
             <!-- Audio -->
-            <!-- Background Music -->
+
+            <!-- Added Sounds -->
+            <audio id="track1" src="assets\audio\neon-gaming.mp3" loop></audio>
+            <audio id="track2" src="assets\audio\stranger-things.mp3" loop></audio>    
+                <!-- Background Music -->
             <audio id="music" src="assets\audio\Event Horizon - Background music.mp3" loop></audio>
+
+
+
             <!-- Game Start -->
             <audio id="start" src="assets\audio\Start game.mp3"></audio>
             <!-- Player Crash -->
@@ -54,6 +62,19 @@
                     </button>
                 </li>
             </ul>
+            <!--Change the Sound Dropdown-->
+            <div id="sound-menu">
+                <button id="change-sound-btn" class="test123">Change Sound</button>
+                <div id="dropdown" class="dropdown-display-none">
+                    <div class="track1 active"> Neon Gaming</div>
+                    <div class="track2"> Stranger Things</div>
+                    <div class="track3"> Event Horizon</div>
+
+                </div>
+
+            </div>
+     
+           
             <!-- Reset Button -->
             <ul class="reset-btn">
                 <li>
@@ -124,12 +145,13 @@
         <section id="bottom-banner">
             <ul class="dir-btn-container">
                 <!-- Left Side Screen Button -->
-                <li class="dir-btns-sides">
-                    <button class="side-screen-btn" id="left-direction-btn" aria-label="Left Direction"></button>
+                <li class="dir-btns-sides11111111">
+                    <img id="shipImage" src="assets/img/space.png" hidden />
+                    <button class="side-screen-btn1121212" id="left-direction-btn" aria-label="Left Direction"></button>
                 </li>
                 <!-- Right Side Screen Button -->
                 <li class="dir-btns-sides">
-                    <button class="side-screen-btn" id="right-direction-btn" aria-label="Right Direction"></button>
+                    <button class="side-screen-btn2123" id="right-direction-btn" aria-label="Right Direction"></button>
                 </li>
             </ul>
         </section>

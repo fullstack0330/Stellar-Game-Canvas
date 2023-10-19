@@ -1,3 +1,63 @@
+// DOM Elements needed
+
+const chooseSoundButton = document.getElementById("change-sound-btn").addEventListener("click", openSoundMenu)
+const dropdown = document.getElementById("dropdown")
+let soundOptions = Array.from(dropdown.children)
+soundOptions.forEach(element => {
+  element.addEventListener("click",selectSound)
+  
+});
+
+//set the default sound, the sound that should play
+let selectedSound;
+selectedSound = document.getElementById("track1")
+
+
+//Open Sound Option
+function openSoundMenu(){
+  console.log("clicked")
+  dropdown.classList.toggle("dropdown-display-none")
+} 
+
+//Change the Selected Sound
+
+function selectSound(e){
+selectedSound?.pause()
+soundOptions.forEach(element => {
+  element.classList.remove("active")
+  
+});
+e.target.classList.add("active")
+  
+let clickedSound = e.target.classList[0]
+let sound;
+switch (clickedSound) {
+  case "track1":
+      sound = 'track1'
+      break;
+  case "track2":
+    sound  = 'track2'
+      break;
+  case "track3":
+    sound = 'music'
+      break;
+  default:
+    sound = 'music'
+}
+console.log(sound)
+selectedSound = document.getElementById(sound)
+
+//Close Sound Menu after change
+openSoundMenu()
+
+}
+
+
+
+
+
+
+
 // Hides the crash screen so it can be unhidden later
 document.getElementById("crash-panel").classList.toggle("hidden");
 // Hides the completed screen so it can be unhidden later
@@ -100,35 +160,35 @@ class Star {
     let s = size * (cnvsLength / this.z);
     // Renders circular star shapes, changing colour as points increase
     ctx.beginPath();
-    if (score <= 1000) {
-      ctx.fillStyle = "#82caff";
-    } else if (score <= 2100) {
-      ctx.fillStyle = "#00FA9A";
-    } else if (score <= 3200) {
-      ctx.fillStyle = "#306eff";
-    } else if (score <= 4000) {
-      ctx.fillStyle = "#7609c4";
-    } else if (score <= 4300) {
-      ctx.fillStyle = "#6900b4";
-    } else if (score <= 5400) {
-      ctx.fillStyle = "#1b1bd6";
-    } else if (score <= 5950) {
-      ctx.fillStyle = "#7f00d4";
-    } else if (score <= 6500) {
-      ctx.fillStyle = "#132aff";
-    } else if (score <= 7000) {
-      ctx.fillStyle = "#00708b";
-    } else if (score <= 7500) {
-      ctx.fillStyle = "#386323";
-    } else if (score <= 8150) {
-      ctx.fillStyle = "#5d794f";
-    } else if (score <= 8700) {
-      ctx.fillStyle = "#4cc437";
-    } else if (score <= 9200) {
-      ctx.fillStyle = "#838383";
-    } else if (score <= 10000) {
-      ctx.fillStyle = "#704cf0";
-    }
+
+if (score <= 250) {
+  ctx.fillStyle = "#4CAF50"; // Green
+} else if (score <= 500) {
+  ctx.fillStyle = "#2196F3"; // Blue
+} else if (score <= 750) {
+  ctx.fillStyle = "#FFC107"; // Yellow
+} else if (score <= 1000) {
+  ctx.fillStyle = "#FF5722"; // Orange
+} else if (score <= 1250) {
+  ctx.fillStyle = "#E91E63"; // Pink
+} else if (score <= 1500) {
+  ctx.fillStyle = "#9C27B0"; // Purple
+} else if (score <= 1750) {
+  ctx.fillStyle = "#673AB7"; // Deep Purple
+} else if (score <= 2000) {
+  ctx.fillStyle = "#03A9F4"; // Light Blue
+} else if (score <= 2250) {
+  ctx.fillStyle = "#009688"; // Teal
+} else if (score <= 2500) {
+  ctx.fillStyle = "#FF5722"; // Orange
+} else if (score <= 2750) {
+  ctx.fillStyle = "#4CAF50"; // Green
+} else if (score <= 3000) {
+  ctx.fillStyle = "#9E9E9E"; // Grey
+} else if (score <= 3250) {
+  ctx.fillStyle = "#FF9800"; // Amber
+}
+
     ctx.arc(xPos, yPos, s, 0, Math.PI * 2);
     ctx.fill();
   }
@@ -163,8 +223,8 @@ class Sprite {
       }
     }
   }
-
-  // Creates and renders the Sprite object to the canvas when called on the object each frame
+// Creates and renders the Sprite object to the canvas when called on the object each frame
+// Creates and renders the Sprite object to the canvas when called on the object each frame
   showSprite() {
     if (score >= 0) {
       let xPos = this.x;
@@ -176,6 +236,7 @@ class Sprite {
       yPos = yPos + s * this.randomY;
       // Renders circular Sprite shapes, changing colour as points increase
       ctx.beginPath();
+
       if (score <= 2400) {
         ctx.fillStyle = "red";
       } else if (score <= 2425) {
@@ -207,7 +268,10 @@ class Sprite {
       } else if (score <= 10000) {
         ctx.fillStyle = "red";
       }
+
+
       ctx.arc(xPos, yPos, s, 0, Math.PI * 2);
+
       ctx.fill();
 
       // Passes the X and Y values into function used for collision detection
@@ -239,7 +303,8 @@ function notZeroRange(min, max) {
 
 // Mute button functionality
 function toggleMute() {
-  music.muted = !music.muted;
+  selectedSound.muted = !selectedSound.muted;
+  // music.muted = !music.muted;
   explosion.muted = !explosion.muted;
   start.muted = !start.muted;
   completed.muted = !completed.muted;
@@ -278,11 +343,14 @@ function drawSprites() {
 
 // Draws player spaceship
 function playerShip() {
+
+  const shipImage = document.getElementById("shipImage");
+
   x1 = 0;
   y1 = 0 + centreOfY / 2;
-  x2 = 30;
-  y2 = 0 + centreOfY / 2 + 20;
-  x3 = -30;
+  x2 = 80;
+  y2 = 40 + centreOfY / 2 + 20;
+  x3 = -230;
   y3 = 0 + centreOfY / 2 + 20;
   s = 9;
 
@@ -291,52 +359,13 @@ function playerShip() {
   ctx.translate(centreOfX, centreOfY);
   ctx.rotate(convertToRadians(angle));
 
+  const shipX = -((x2 - x1) / 2) + x1;
+  const shipY = -((y2 - y1) / 2) + y1;
+  
+  ctx.drawImage(shipImage, shipX, shipY, x2 - x1, y2 - y1);
   // Shapes used to draw ship
   // Under Glow
   ctx.beginPath();
-  ctx.fillStyle = "Violet";
-  ctx.moveTo(x1, y1 - 1);
-  ctx.lineTo(x2 + 5, y2 + 3);
-  ctx.lineTo(x3 - 5, y3 + 3);
-  ctx.fill();
-
-  // Small engine light right
-  ctx.beginPath();
-  ctx.fillStyle = "white";
-  ctx.arc(x1 + 23, y2, s / 2, 0, Math.PI * 1);
-  ctx.fill();
-
-  // Engine light right
-  ctx.beginPath();
-  ctx.fillStyle = "white";
-  ctx.arc(x1 + 12, y2 - 3, s, 0, Math.PI * 1);
-  ctx.fill();
-
-  // Engine light middle
-  ctx.beginPath();
-  ctx.fillStyle = "white";
-  ctx.arc(x1, y2 - 3, s, 0, Math.PI * 1);
-  ctx.fill();
-
-  // Engine light left
-  ctx.beginPath();
-  ctx.fillStyle = "white";
-  ctx.arc(x1 - 12, y2 - 3, s, 0, Math.PI * 1);
-  ctx.fill();
-
-  // Small engine light left
-  ctx.beginPath();
-  ctx.fillStyle = "white";
-  ctx.arc(x1 - 23, y2, s / 2, 0, Math.PI * 1);
-  ctx.fill();
-
-  // Top black triangle
-  ctx.beginPath();
-  ctx.fillStyle = "#000";
-  ctx.moveTo(x1, y1);
-  ctx.lineTo(x2 + 4, y2);
-  ctx.lineTo(x3 - 4, y3);
-  ctx.fill();
 
   // Restore canvas to saved state before transformation
   ctx.restore();
@@ -643,7 +672,7 @@ function initialiseGame() {
   document.getElementById("bottom-banner").classList.toggle("hidden");
   document.getElementById("github").classList.toggle("hidden");
   document.getElementById("start").play();
-  document.getElementById("music").play();
+  selectedSound.play();
 
   // Generates new Sprite object per array iteration and maintains Sprite numbers to numberOfSprites
   for (var i = 0; i < numberOfSprites; i++) {

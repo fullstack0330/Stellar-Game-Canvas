@@ -1,3 +1,54 @@
+/*My CSS*/
+#sound-menu{
+    margin-left: 60px;
+     height: 200px;
+     z-index: 19;
+     display: flex ;
+     position: absolute;
+     flex-direction: column;
+    
+     
+  
+}
+#change-sound-btn{
+    font-size: clamp(16px, 6vw, 30px);
+   
+    height: 60px;
+    z-index: 20;
+    cursor: pointer;
+   
+    
+}
+.dropdown-display-none{
+    display: none;
+}
+#dropdown div{
+    height: 40px;
+    width: 100%;
+    background:red;
+    color: rgba(255, 255, 255, 0.541);
+    font-family: "Oxanium", cursive;
+    font-size: clamp(4px, 3.5vw, 21px);
+    background-color: rgba(255, 255, 255, 0.048);
+    border: 1px solid rgba(105, 105, 105, 0.363);
+    border-radius: 4%;
+    transition: all 0.1s ease-out;
+    padding: 0 3px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+#dropdown div:hover{
+    background-color: rgba(255, 255, 255, 0.541);
+}
+#dropdown .active{
+    color: green;
+}
+
+/*Previous CSS*/
 * {
     box-sizing: border-box;
     -webkit-touch-callout: none;
@@ -8,7 +59,7 @@
 body {
     margin: 0;
     min-height: 100vh;
-    background-color: #000;
+    background-color: #ffffff;
 }
 
 #container {
@@ -16,8 +67,8 @@ body {
     position: relative;
 }
 
-#canvas {
-    background-color: #000;
+canvas {
+    background-color: #ffffff;
 }
 
 /* Banner Styles */
@@ -158,7 +209,7 @@ button {
 #mute,
 #reset,
 #start-btn,
-#restart-btn {
+#restart-btn,#change-sound-btn {
     background-color: transparent;
     background-repeat: no-repeat;
     border: none;
@@ -177,7 +228,7 @@ button {
     top: 1px;
 }
 
-.mute-btn i {
+.mute-btn i ,#change-sound-btn{
     color: rgba(255, 255, 255, 0.658);
 }
 
@@ -192,9 +243,12 @@ button {
     top: 7px;
 }
 
+
+/* added my button to the menu*/
 #reset,
 #start-btn,
-#restart-btn {
+#restart-btn ,
+ #change-sound-btn{
     color: rgba(255, 255, 255, 0.541);
     font-family: "Oxanium", cursive;
     font-size: clamp(4px, 3.5vw, 21px);
@@ -226,7 +280,7 @@ button {
 
 #start-btn:hover,
 #restart-btn:hover {
-    background-color: rgba(255, 255, 255, 0.493);
+    background-color: rgba(25, 25, 25, 1);
 }
 
 #reset:active,
@@ -262,7 +316,7 @@ ul.github-button {
     width: 100%;
     top: 42%;
     text-align: center;
-    color: #fff;
+    color: #ffFFFf;
     font-family: "Oxanium", cursive;
     font-size: 20px;
 }
@@ -291,7 +345,7 @@ ul.github-button {
 
 p#credit {
     font-size: clamp(4px, 2vw, 10px);
-    color: #A8A8A8;
+    color: #FFFFFF;
 }
 
 .hidden {
