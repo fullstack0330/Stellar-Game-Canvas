@@ -10,7 +10,7 @@ Stellar Drift is a game that will test your focus, reaction times, and ability t
 
 As your score increases, so will your speed! Watch for the colours changing to indicate your progression! To control the ship, use the left and right arrow keys, or for mobile and tablet users, touch anywhere on the the left and right sides of the screen. When you're ready, hit the Enter key or press the Start Game button to begin... Good luck!
 
-[**Click here to play the game**](https://github.com/fullstack0330/Stellar-Game-Canvas/)
+[**Click here to play the game**](https://stellar-game-canvas.vercel.app/)
 
 ##### This project was developed for my Interactive Frontend Development module on my Full Stack Software Development course.
 
